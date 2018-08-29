@@ -176,5 +176,3 @@ bindsym $mod+i exec /usr/local/bin/idea
 # add background
 exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
 
-# add conky
-
