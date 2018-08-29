@@ -167,7 +167,14 @@ bar {
 # Custom stuff
 ##########################################################################################################################
 
+# always start chrome on workspace 2 
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable'
+
 # intelliJ IDEA shortcut
 bindsym $mod+i exec /usr/local/bin/idea
 
+# add background
+exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
+
+# add conky
 
