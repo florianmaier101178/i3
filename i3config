@@ -83,15 +83,15 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
-set $ws1 "1:&#xf120;" # bash
-set $ws2 "2:&#xf268;" # chrome
-set $ws3 "3:&#xf120;" # bash
-set $ws4 "4:&#xf044;" # idea
-set $ws5 "5:&#xf044;" # idea
-set $ws6 "6:&#xf044;" # idea
+set $ws1 "1:&#xf120;"
+set $ws2 "2:&#xf268;"
+set $ws3 "3:&#xf120;"
+set $ws4 "4:&#xf044;"
+set $ws5 "5:&#xf044;"
+set $ws6 "6:&#xf044;"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9:&#xf120;" # bash
+set $ws9 "9:&#xf120;"
 
 # assign workspaces to monitors
 workspace 1 output VGA-1
