@@ -31,6 +31,19 @@ bindsym $mod+d exec dmenu_run
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# launch common apps
+mode "app launch" {
+        bindsym b exec google-chrome-stable
+        bindsym c exec code
+        bindsym f exec firefox
+        bindsym i exec idea
+        bindsym v exec terminator --command=vim
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+o mode "app launch"
+
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -99,6 +112,18 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 
+# move workspaces around
+mode "move workspace" {
+        bindsym Left move workspace to output left
+        bindsym Right move workspace to output right
+        bindsym Up move workspace to output up
+        bindsym Down move workspace to output down
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "move workspace"
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -138,12 +163,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-# Custom stuff
-##########################################################################################################################
-
-# intelliJ IDEA shortcut
-bindsym $mod+i exec /usr/local/bin/idea
 
 # add background
 exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
