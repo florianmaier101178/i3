@@ -85,17 +85,17 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1:bash"
 set $ws2 "2:chrome"
-set $ws3 "3:idea"
-set $ws4 "4"
+set $ws3 "3:bash"
+set $ws4 "4:idea"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
+bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator --title ws1
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C chrome | wc -l) = 0 ] && /usr/bin/google-chrome-stable -s
-bindsym $mod+3 workspace $ws3
+bindsym $mod+3 workspace $ws3; exec [ $(ps h -C terminator | grep ws3 | wc -l) = 0 ] && terminator --title ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
