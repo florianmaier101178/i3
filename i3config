@@ -90,7 +90,14 @@ set $ws4 "4:idea"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8:bash"
+
+# assign workspaces to monitors
+workspace 1 output VGA-1
+workspace 2 output VGA-2
+workspace 3 output VGA-1
+workspace 4 output VGA-1
+workspace 8 output VGA-2
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator --title ws1
@@ -100,7 +107,7 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
+bindsym $mod+8 workspace $ws8; exec [ $(ps h -C terminator | grep ws8 | wc -l) = 0 ] && terminator --title ws8
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
