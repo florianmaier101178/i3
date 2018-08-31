@@ -13,3 +13,20 @@ ln -s ~/i3/i3config ~/.config/i3/config
 sudo ln -s ~/i3/bin/moveWorkspaceRight.sh /usr/local/bin/moveWorkspaceRight
 sudo ln -s ~/i3/bin/moveWorkspaceLeft.sh /usr/local/bin/moveWorkspaceLeft
 
+# install fonts
+if [ ! -d ~/.fonts ]; then
+    mkdir ~/.fonts
+fi
+
+if [ ! -f ~/.fonts/fa-brands-400.ttf ]; then
+    ln -s ~/i3/fonts/fa-brands-400.ttf ~/.fonts/fa-brands-400.ttf
+fi
+
+if [ ! -f ~/.fonts/fa-regular-400.ttf ]; then
+    ln -s ~/i3/fonts/fa-regular-400.ttf ~/.fonts/fa-regular-400.ttf
+fi
+
+if [ ! -f ~/.fonts/fa-solid-900.ttf ]; then
+    ln -s ~/i3/fonts/fa-solid-900.ttf ~/.fonts/fa-solid-900.ttf
+fi
+
