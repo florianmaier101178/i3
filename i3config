@@ -173,6 +173,10 @@ bindsym $mod+r mode "resize"
 bar {
         font pango:monospace 8, Awesome 8
         status_command i3status
+        colors {
+            active_workspace   #6c71c4 #073642 #6c71c4
+            inactive_workspace #073642 #073642 #93a1a1
+        }
 }
 
 # add background
