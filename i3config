@@ -33,7 +33,7 @@ bindsym $mod+d exec dmenu_run
 
 # launch common apps
 mode "app launch" {
-        bindsym b exec google-chrome-stable
+        bindsym a exec atom
         bindsym c exec code
         bindsym f exec firefox
         bindsym i exec idea
