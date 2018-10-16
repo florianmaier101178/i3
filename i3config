@@ -177,7 +177,8 @@ bar {
         colors {
             active_workspace   #6c71c4 #073642 #6c71c4
             inactive_workspace #073642 #073642 #93a1a1
-            urgent_workspace #ff4500 #ff4500 #ffffff
+            urgent_workspace #50c878 #50c878 #ffffff
+            binding_mode    #ff4500 #ff4500 #ffffff
         }
 }
 
