@@ -109,7 +109,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8; exec [ $(ps h -C terminator | grep ws8 | wc -l) = 0 ] && terminator --title ws8
-bindsym $mod+9 workspace $ws9
+bindsym $mod+9 workspace $ws9; exec [ $(ps h -C mattermost | wc -l) = 0] && /usr/bin/mattermost
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -181,4 +181,5 @@ bar {
 
 # add background
 exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
+
 
