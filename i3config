@@ -40,6 +40,7 @@ mode "app launch" {
         bindsym v exec terminator --command=vim
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+o mode "default"
 }
 
 bindsym $mod+o mode "app launch"
@@ -131,6 +132,7 @@ mode "move workspace" {
         bindsym Down move workspace to output down
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+m mode "default"
 }
 
 bindsym $mod+m mode "move workspace"
