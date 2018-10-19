@@ -94,6 +94,17 @@ set $ws6 "6:&#xf044;"
 set $ws7 "7"
 set $ws8 "8:&#xf120;"
 set $ws9 "9:&#xf198;"
+set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # assign workspaces to monitors
 workspace 1 output VGA-1
@@ -102,6 +113,17 @@ workspace 3 output VGA-1
 workspace 4 output VGA-1
 workspace 8 output VGA-2
 workspace 9 output VGA-2
+workspace 10 output VGA-2
+workspace 11 output VGA-1
+workspace 12 output VGA-2
+workspace 13 output VGA-1
+workspace 14 output VGA-2
+workspace 15 output VGA-1
+workspace 16 output VGA-2
+workspace 17 output VGA-1
+workspace 18 output VGA-2
+workspace 19 output VGA-1
+workspace 20 output VGA-2
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator --title ws1
@@ -113,6 +135,17 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8; exec [ $(ps h -C terminator | grep ws8 | wc -l) = 0 ] && terminator --title ws8
 bindsym $mod+9 workspace $ws9; exec [ $(ps h -C mattermost-desktop | wc -l) = 0 ] && /usr/bin/mattermost
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Control+1 workspace $ws11
+bindsym $mod+Control+2 workspace $ws12
+bindsym $mod+Control+3 workspace $ws13
+bindsym $mod+Control+4 workspace $ws14
+bindsym $mod+Control+5 workspace $ws15
+bindsym $mod+Control+6 workspace $ws16
+bindsym $mod+Control+7 workspace $ws17
+bindsym $mod+Control+8 workspace $ws18
+bindsym $mod+Control+9 workspace $ws19
+bindsym $mod+Control+0 workspace $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
