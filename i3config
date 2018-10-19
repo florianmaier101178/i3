@@ -36,6 +36,7 @@ mode "app launch" {
         bindsym a exec atom
         bindsym c exec code
         bindsym f exec firefox
+        bindsym g exec goland
         bindsym i exec idea
         bindsym v exec terminator --command=vim
         bindsym Return mode "default"
@@ -186,4 +187,4 @@ bar {
 
 # add background
 exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
-
+#exec --no-startup-id conky
