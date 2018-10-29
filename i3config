@@ -125,6 +125,10 @@ workspace 18 output VGA-2
 workspace 19 output VGA-1
 workspace 20 output VGA-2
 
+# assign window classes
+assign [class="^Evince$"] 7: pdf
+for_window [class="^Evince$"] focus
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator --title ws1
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C chrome | wc -l) = 0 ] && /usr/bin/google-chrome-stable -s
