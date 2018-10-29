@@ -91,7 +91,7 @@ set $ws3 "3:&#xf120;"
 set $ws4 "4:&#xf044;"
 set $ws5 "5:&#xf044;"
 set $ws6 "6:&#xf044;"
-set $ws7 "7"
+set $ws7 "7:&#xf02d;"
 set $ws8 "8:&#xf120;"
 set $ws9 "9:&#xf198;"
 set $ws10 "10"
@@ -126,7 +126,7 @@ workspace 19 output VGA-1
 workspace 20 output VGA-2
 
 # assign window classes
-assign [class="^Evince$"] 7: pdf
+assign [class="^Evince$"] 7
 for_window [class="^Evince$"] focus
 
 # switch to workspace
