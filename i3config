@@ -224,5 +224,6 @@ bar {
 
 # add background
 #exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
-exec --no-startup-id /home/flo/background/i3wpd.py "--bg-fill" /home/flo/background/noel/ .jpg
+exec --no-startup-id /home/flo/i3/i3wpd/i3wpd.py "--bg-fill" /home/flo/i3/i3wpd/noel/ .jpg
+#exec --no-startup-id /home/flo/background/i3wpd.py "--bg-fill" /home/flo/background/solar/ .jpg
 #exec --no-startup-id conky
