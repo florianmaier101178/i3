@@ -38,6 +38,7 @@ mode "app launch" {
         bindsym f exec firefox
         bindsym g exec goland
         bindsym i exec idea
+        bindsym r exec rider
         bindsym v exec terminator --command=vim
         bindsym Return mode "default"
         bindsym Escape mode "default"
