@@ -38,6 +38,7 @@ mode "app launch" {
         bindsym f exec firefox
         bindsym g exec goland
         bindsym i exec idea
+        bindsym k exec krita
         bindsym r exec rider
         bindsym v exec terminator --command=vim
         bindsym Return mode "default"
