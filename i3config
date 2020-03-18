@@ -87,6 +87,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
+# icons from font awesome https://fontawesome.com/
 set $ws1 "1:&#xf120;"
 set $ws2 "2:&#xf268;"
 set $ws3 "3:&#xf120;"
