@@ -33,14 +33,9 @@ bindsym $mod+d exec dmenu_run
 
 # launch common apps
 mode "app launch" {
-        bindsym a exec atom
-        bindsym c exec code
         bindsym f exec firefox
         bindsym g exec goland
         bindsym i exec idea
-        bindsym k exec keepass
-        bindsym r exec rider
-        bindsym v exec terminator --command=vim
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+o mode "default"
@@ -130,10 +125,6 @@ workspace 17 output DP-1
 workspace 18 output DP-1
 workspace 19 output eDP-1
 workspace 20 output HDMI-2
-
-# assign window classes
-assign [class="^Evince$"] 7
-for_window [class="^Evince$"] focus
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator -u --title ws1
