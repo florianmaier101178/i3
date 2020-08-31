@@ -89,7 +89,7 @@ set $ws3 "3:&#xf120;"
 set $ws4 "4:&#xf044;"
 set $ws5 "5:&#xf044;"
 set $ws6 "6:&#xf044;"
-set $ws7 "7:&#xf02d;"
+set $ws7 "7:&#xf4ad;"
 set $ws8 "8:&#xf120;"
 set $ws9 "9:&#xf120;"
 set $ws10 "10:&#xf0e0;"
@@ -105,26 +105,26 @@ set $ws19 "19:&#xf5ab;"
 set $ws20 "20:&#xf09e;"
 
 # assign workspaces to monitors
-workspace 1 output HDMI-2
-workspace 2 output DP-1
-workspace 3 output HDMI-2
-workspace 4 output HDMI-2
-workspace 5 output DP-1
-workspace 6 output HDMI-2
-workspace 7 output DP-1
-workspace 8 output DP-1
+workspace 1 output DP-1-2
+workspace 2 output DP-1-1
+workspace 3 output DP-1-2
+workspace 4 output DP-1-2
+workspace 5 output DP-1-1
+workspace 6 output DP-1-2
+workspace 7 output DP-1-1
+workspace 8 output DP-1-1
 workspace 9 output eDP-1
 workspace 10 output eDP-1
 workspace 11 output eDP-1
 workspace 12 output eDP-1
 workspace 13 output eDP-1
-workspace 14 output HDMI-2
-workspace 15 output DP-1
-workspace 16 output HDMI-2
-workspace 17 output DP-1
-workspace 18 output DP-1
+workspace 14 output DP-1-2
+workspace 15 output DP-1-1
+workspace 16 output DP-1-2
+workspace 17 output DP-1-1
+workspace 18 output DP-1-1
 workspace 19 output eDP-1
-workspace 20 output HDMI-2
+workspace 20 output DP-1-2
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator -u --title ws1
@@ -218,6 +218,8 @@ bar {
             binding_mode    #ff4500 #ff4500 #ffffff
         }
 }
+
+exec /usr/local/bin/homeMonitorSetup
 
 # audio stuff
 # amixer
