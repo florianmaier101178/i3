@@ -1,19 +1,9 @@
+# Mod4 is the windows key on the keyboard
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -26,21 +16,17 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # launch common apps
 mode "app launch" {
         bindsym f exec firefox
         bindsym g exec goland
         bindsym i exec idea
+        bindsym k exec keepass
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+o mode "default"
 }
-
 bindsym $mod+o mode "app launch"
 
 # change focus
@@ -104,27 +90,31 @@ set $ws18 "18"
 set $ws19 "19:&#xf5ab;"
 set $ws20 "20:&#xf09e;"
 
+set $LAPTOP_DISPLAY eDP-1
+set $FIRST_DISPLAY DP-1-2
+set $SECOND_DISPLAY DP-1-1
+
 # assign workspaces to monitors
-workspace 1 output DP-1-2
-workspace 2 output DP-1-1
-workspace 3 output DP-1-2
-workspace 4 output DP-1-2
-workspace 5 output DP-1-1
-workspace 6 output DP-1-2
-workspace 7 output DP-1-1
-workspace 8 output DP-1-1
-workspace 9 output eDP-1
-workspace 10 output eDP-1
-workspace 11 output eDP-1
-workspace 12 output eDP-1
-workspace 13 output eDP-1
-workspace 14 output DP-1-2
-workspace 15 output DP-1-1
-workspace 16 output DP-1-2
-workspace 17 output DP-1-1
-workspace 18 output DP-1-1
-workspace 19 output eDP-1
-workspace 20 output DP-1-2
+workspace 1 output $FIRST_DISPLAY
+workspace 2 output $SECOND_DISPLAY
+workspace 3 output $FIRST_DISPLAY
+workspace 4 output $FIRST_DISPLAY
+workspace 5 output $SECOND_DISPLAY
+workspace 6 output $FIRST_DISPLAY
+workspace 7 output $SECOND_DISPLAY
+workspace 8 output $SECOND_DISPLAY
+workspace 9 output $LAPTOP_DISPLAY
+workspace 10 output $LAPTOP_DISPLAY
+workspace 11 output $LAPTOP_DISPLAY
+workspace 12 output $LAPTOP_DISPLAY
+workspace 13 output $LAPTOP_DISPLAY
+workspace 14 output $FIRST_DISPLAY
+workspace 15 output $SECOND_DISPLAY
+workspace 16 output $FIRST_DISPLAY
+workspace 17 output $SECOND_DISPLAY
+workspace 18 output $SECOND_DISPLAY
+workspace 19 output $LAPTOP_DISPLAY
+workspace 20 output $FIRST_DISPLAY
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator -u --title ws1
@@ -169,7 +159,6 @@ mode "move workspace" {
         bindsym Escape mode "default"
         bindsym $mod+m mode "default"
 }
-
 bindsym $mod+m mode "move workspace"
 
 # reload the configuration file
@@ -181,12 +170,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -203,11 +186,9 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
         font pango:monospace 8, Awesome 8
         status_command i3status
@@ -231,7 +212,5 @@ bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
 # add background
-#exec --no-startup-id feh --bg-fill '/home/flo/background.jpg'
-exec --no-startup-id /home/flo/i3/i3wpd/i3wpd.py "--bg-fill" /home/flo/i3/i3wpd/noel/ .jpg
-#exec --no-startup-id /home/flo/background/i3wpd.py "--bg-fill" /home/flo/background/solar/ .jpg
-#exec --no-startup-id conky
+exec --no-startup-id feh --bg-fill '/home/flo/i3/wallpaper/6.jpg'
+
