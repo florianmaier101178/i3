@@ -17,6 +17,42 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+mode "system" {
+        bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
+        bindsym x exec --no-startup-id i3-msg exit
+        bindsym h exec --no-startup-id shutdown -h now
+        bindsym r exec --no-startup-id shutdown -r now
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+x mode "default"
+}
+bindsym $mod+x mode "system"
+
+# system tools
+for_window [instance="terminator" title="^htop$"] fullscreen
+for_window [instance="terminator" title="^ranger$"] fullscreen
+for_window [instance="terminator" title="^top$"] fullscreen
+# assign [class="firefox"] 1:Web
+
+mode "tools" {
+        bindsym h exec --no-startup-id i3-msg 'exec terminator -e htop --title htop', mode "default"
+        bindsym r exec --no-startup-id i3-msg 'exec terminator -e ranger --title ranger', mode "default"
+        bindsym t exec --no-startup-id i3-msg 'exec terminator -e top --title top', mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+t mode "default"
+}
+bindsym $mod+t mode "tools"
+
+# scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # launch common apps
 mode "app launch" {
         bindsym f exec firefox
@@ -49,6 +85,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -191,13 +228,21 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
         font pango:monospace 8, Awesome 8
+        
         status_command i3status
+
         colors {
             active_workspace   #6c71c4 #073642 #6c71c4
             inactive_workspace #073642 #073642 #93a1a1
             urgent_workspace #50c878 #50c878 #ffffff
             binding_mode    #ff4500 #ff4500 #ffffff
         }
+        # mode hide 
+
+        tray_output primary
+
+        # take screenshot by right clicking on the bar
+        bindsym --release button3 exec --no-startup-id import /home/flo/latest-screenshot.png
 }
 
 exec /usr/local/bin/homeMonitorSetup
@@ -213,4 +258,7 @@ bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
 # add background
 exec --no-startup-id feh --bg-fill '/home/flo/i3/wallpaper/6.jpg'
+
+#for_window [class=".*"] title_format "<b>%title</b> -c: %class -i: %instance"
+for_window [class=".*"] title_format "<b>%title</b>"
 
