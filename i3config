@@ -5,6 +5,21 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
+# Colors
+set $blue       #4682B4
+set $white      #ffffff
+set $dark_grey  #333333
+set $light_grey #888888
+set $coral      #FF7F50
+set $green      #3CB371
+set $black      #000000
+
+# set some nice colors      border      background  text
+client.focused              $blue       $blue       $white
+client.unfocused            $dark_grey  $dark_grey  $light_grey
+client.focused_inactive     $dark_grey  $dark_grey  $light_grey
+client.urgent               $coral      $coral      $black
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -227,17 +242,24 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
-        font pango:monospace 8, Awesome 8
+        #font pango:monospace 8, Awesome 8
+        font pango:SF UI Display 8, FontAwesome 8
         
-        status_command i3status
+        status_command i3status --config ~/.config/i3/i3status.conf
+        #status_command i3status
+        
+        separator_symbol " "
 
         colors {
-            active_workspace   #6c71c4 #073642 #6c71c4
-            inactive_workspace #073642 #073642 #93a1a1
-            urgent_workspace #50c878 #50c878 #ffffff
-            binding_mode    #ff4500 #ff4500 #ffffff
+            background $black
+            # set some nice colors  border      background  text
+            focused_workspace       $white      $blue       $white
+            active_workspace        $light_grey $black  $light_grey
+            inactive_workspace      $light_grey $black  $light_grey
+            urgent_workspace        $white      $coral      $black
+            binding_mode            $white      $green      $black
         }
-        # mode hide 
+        position top
 
         tray_output primary
 
