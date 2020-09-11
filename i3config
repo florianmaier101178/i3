@@ -254,8 +254,8 @@ bar {
             background $black
             # set some nice colors  border      background  text
             focused_workspace       $white      $blue       $white
-            active_workspace        $light_grey $black  $light_grey
-            inactive_workspace      $light_grey $black  $light_grey
+            active_workspace        $light_grey $black      $light_grey
+            inactive_workspace      $light_grey $black      $light_grey
             urgent_workspace        $white      $coral      $black
             binding_mode            $white      $green      $black
         }
@@ -279,7 +279,7 @@ bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
 # add background
-exec --no-startup-id feh --bg-fill '/home/flo/i3/wallpaper/6.jpg'
+exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/1.jpg /home/flo/i3/wallpaper/6.jpg /home/flo/i3/wallpaper/2.jpg
 
 #for_window [class=".*"] title_format "<b>%title</b> -c: %class -i: %instance"
 for_window [class=".*"] title_format "<b>%title</b>"
