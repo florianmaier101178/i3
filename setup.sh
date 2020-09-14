@@ -21,6 +21,7 @@ sudo ln -s ~/i3/bin/moveWorkspaceLeft.sh /usr/local/bin/moveWorkspaceLeft
 sudo ln -s ~/i3/bin/conkyStarter.sh /usr/local/bin/conkyStarter.sh
 sudo ln -s ~/i3/bin/dmenuPrompt.sh /usr/local/bin/dmenuPrompt.sh
 sudo ln -s ~/i3/bin/dmenuDisplay.sh /usr/local/bin/dmenuDisplay.sh
+sudo ln -s ~/i3/bin/dmenuVpn.sh /usr/local/bin/dmenuVpn.sh
 
 # install fonts
 if [ ! -d ~/.fonts ]; then

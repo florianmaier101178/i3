@@ -34,10 +34,11 @@ bindsym $mod+d exec --no-startup-id dmenu_run -nf 'Font Awesome 5:Regular' -nb '
 
 mode "system" {
         bindsym d exec --no-startup-id dmenuDisplay.sh, mode "default"
-        bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
-        bindsym x exec --no-startup-id dmenuPrompt.sh "Do you want to lock the system?" "i3-msg exit", mode "default"
         bindsym h exec --no-startup-id dmenuPrompt.sh "Do you want to shutdown the system?" "shutdown -h now", mode "default"
+        bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
         bindsym r exec --no-startup-id dmenuPrompt.sh "Do you want to restart the system?" "shutdown -r now", mode "default"
+        bindsym v exec --no-startup-id dmenuVpn.sh, mode "default"
+        bindsym x exec --no-startup-id dmenuPrompt.sh "Do you want to lock the system?" "i3-msg exit", mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"

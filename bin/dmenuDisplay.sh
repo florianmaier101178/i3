@@ -6,7 +6,7 @@ leftBig=DP-1-1
 
 displays="all\nbigs\nlaptop\nrightAndLaptop\nleftAndLaptop\nright\nleft"
 
-displays_choice=$(echo -e "$displays" | dmenu -i)
+displays_choice=$(echo -e "$displays" | dmenu -i -p "Monitor Setup:")
 
 case "$displays_choice" in
     all) 
