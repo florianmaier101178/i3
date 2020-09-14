@@ -30,13 +30,14 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -nf 'Font Awesome 5:Regular' -nb '$black' -nf '$white' -sb '$green'
+bindsym $mod+d exec --no-startup-id dmenu_run -nf 'Font Awesome 5:Regular' -nb '$black' -nf '$white' -sb '$green'
 
 mode "system" {
+        bindsym d exec --no-startup-id dmenuDisplay.sh, mode "default"
         bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
-        bindsym x exec --no-startup-id i3-msg exit
-        bindsym h exec --no-startup-id shutdown -h now
-        bindsym r exec --no-startup-id shutdown -r now
+        bindsym x exec --no-startup-id dmenuPrompt.sh "Do you want to lock the system?" "i3-msg exit", mode "default"
+        bindsym h exec --no-startup-id dmenuPrompt.sh "Do you want to shutdown the system?" "shutdown -h now", mode "default"
+        bindsym r exec --no-startup-id dmenuPrompt.sh "Do you want to restart the system?" "shutdown -r now", mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
