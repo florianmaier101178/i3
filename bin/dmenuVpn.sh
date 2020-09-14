@@ -12,7 +12,7 @@ case "$vpn_command" in
         lhvpnd
         ;;
     status)
-        notify-send "$(lhvpns)"
+        notify-send -t 3000 "$(lhvpns)"
         ;;
 esac
 
