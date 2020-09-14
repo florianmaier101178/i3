@@ -3,7 +3,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
+font pango:System San Francisco Display 8
 
 # Colors
 set $blue       #4682B4
@@ -249,7 +250,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
         #font pango:monospace 8, Awesome 8
-        font pango:SF UI Display 8, FontAwesome 8
+        #font pango:SF UI Display 8, FontAwesome 8
+        font pango:System San Francisco Display 8, FontAwesome 8 
 
         status_command i3status --config ~/.config/i3/i3status.conf
         
