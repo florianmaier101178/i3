@@ -25,6 +25,10 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminator
+# zooming with terminator
+# zoom in -> Ctrl + +
+# zoom out -> Ctrl + -
+# normal size -> Ctrl + 0
 
 # kill focused window
 bindsym $mod+Shift+q kill
