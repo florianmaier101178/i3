@@ -257,7 +257,7 @@ bar {
         #font pango:SF UI Display 8, FontAwesome 8
         font pango:System San Francisco Display 8, FontAwesome 8 
 
-        status_command i3status --config ~/.config/i3/i3status.conf
+        status_command py3status --timeout 5 --config ~/.config/i3/i3status.conf
         
         separator_symbol " "
 
