@@ -21,6 +21,8 @@ client.unfocused            $dark_grey  $dark_grey  $light_grey
 client.focused_inactive     $dark_grey  $dark_grey  $light_grey
 client.urgent               $coral      $coral      $black
 
+hide_edge_borders both
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -43,6 +45,7 @@ mode "system" {
         bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
         bindsym r exec --no-startup-id dmenuPrompt.sh "Do you want to restart the system?" "shutdown -r now", mode "default"
         bindsym v exec --no-startup-id dmenuVpn.sh, mode "default"
+        bindsym w exec --no-startup-id rofi -show window -font "System San Francisco Display 12", mode "default"
         bindsym x exec --no-startup-id dmenuPrompt.sh "Do you want to lock the system?" "i3-msg exit", mode "default"
 
         bindsym Return mode "default"
@@ -60,7 +63,7 @@ for_window [instance="terminator" title="^top$"] fullscreen
 mode "tools" {
         bindsym h exec --no-startup-id i3-msg 'exec terminator -e htop --title htop', mode "default"
         bindsym r exec --no-startup-id i3-msg 'exec terminator -e ranger --title ranger', mode "default"
-        bindsym t exec --no-startup-id i3-msg 'exec terminator -e top --title top', mode "default"
+        bindsym t exec --no-startup-id i3-msg 'exec terminator -e htop --title top', mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -293,7 +296,8 @@ bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/6.jpg /home/flo/i3/wallpaper/1.jpg /home/flo/i3/wallpaper/2.jpg
 
 #for_window [class=".*"] title_format "<b>%title</b> -c: %class -i: %instance"
-for_window [class=".*"] title_format "<b>%title</b>"
+#for_window [class=".*"] title_format "<b>%title</b>"
+for_window [class=".*"] title_format "%title"
 
 # conky
 exec --no-startup-id conkyStarter.sh
