@@ -300,6 +300,9 @@ exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/6.jpg /home/flo/i3/wal
 #for_window [class=".*"] title_format "<b>%title</b>"
 for_window [class=".*"] title_format "%title"
 
+# make mouse curser invisible after some time
+exec --no-startup-id unclutter
+
 # conky
 exec --no-startup-id conkyStarter.sh
 
