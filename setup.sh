@@ -13,6 +13,8 @@ ln -s ~/i3/i3config ~/.config/i3/config
 ln -s ~/i3/i3status.conf ~/.config/i3/i3status.conf
 ln -s ~/i3/py3status/k8senv.py ~/.config/i3/py3status/k8senv.py
 ln -s ~/i3/py3status/k8senv.sh ~/.config/i3/py3status/k8senv.sh
+ln -s ~/i3/py3status/lanStatus.py ~/.config/i3/py3status/lanStatus.py
+ln -s ~/i3/py3status/lanStatus.sh ~/.config/i3/py3status/lanStatus.sh
 
 # link conkyrc
 sudo ln -s ~/i3/conky.conf ~/.config/i3/conky.conf
