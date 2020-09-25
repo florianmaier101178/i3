@@ -50,8 +50,9 @@ mode "system" {
         bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
         bindsym p exec --no-startup-id dmenuProjects.sh, mode "default"
         bindsym r exec --no-startup-id dmenuPrompt.sh "Do you want to restart the system?" "shutdown -r now", mode "default"
+        bindsym s exec --no-startup-id rofi -modi ssh -show ssh, mode "default"
         bindsym v exec --no-startup-id dmenuVpn.sh, mode "default"
-        bindsym w exec --no-startup-id rofi -show window -font "System San Francisco Display 12", mode "default"
+        bindsym w exec --no-startup-id rofi -show window, mode "default"
         bindsym x exec --no-startup-id dmenuPrompt.sh "Do you want to log off from the system?" "i3-msg exit", mode "default"
 
         bindsym Return mode "default"

@@ -29,6 +29,10 @@ sudo ln -s ~/i3/bin/dmenuVpn.sh /usr/local/bin/dmenuVpn.sh
 sudo ln -s ~/i3/bin/dmenuProjects.sh /usr/local/bin/dmenuProjects.sh
 sudo ln -s ~/i3/bin/dmenuK8sContexts.sh /usr/local/bin/dmenuK8sContexts.sh
 
+# rofi
+mkdir ~/.config/rofi
+ln -s ~/i3/rofi/roficonfig ~/.config/rofi/config
+
 # install fonts
 if [ ! -d ~/.fonts ]; then
     mkdir ~/.fonts
