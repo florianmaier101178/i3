@@ -91,6 +91,7 @@ mode "app launch" {
         bindsym g exec goland
         bindsym i exec idea
         bindsym k exec keepass
+        bindsym p exec pycharm
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+o mode "default"
