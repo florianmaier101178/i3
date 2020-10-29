@@ -1,8 +1,13 @@
 #!/bin/bash
 
-projects_commands="appliance\ninterpreter\nfactoryfloor\nworkflow\nalarmservice\nfridgestate\nhistory\nlocalization\nmasterdata-provider\nmessaging"
+projects_commands="appliance\ninterpreter\nfactoryfloor\nworkflow\nalarmservice\nfridgestate\nhistory\nlocalization\nmasterdata-provider\nmessaging\nrawtelemetry"
 
 project_command=$(echo -e "$projects_commands" | dmenu -i -p "Projects:")
 
-cd /home/flo/projects/business/hau-bus-$project_command && idea .
+if [ $project_command == "rawtelemetry" ];
+then
+    cd /home/flo/projects/business/hau-bus-$project_command && goland .
+else
+    cd /home/flo/projects/business/hau-bus-$project_command && idea .
+fi
 
