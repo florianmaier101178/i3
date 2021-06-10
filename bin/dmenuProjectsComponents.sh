@@ -1,6 +1,6 @@
 #!/bin/bash
 
-projects_commands="iaac-initial\niaac"
+projects_commands="iaac\niaac-initial\njenkins-slaves"
 
 project_command=$(echo -e "$projects_commands" | dmenu -i -p "Projects:")
 
