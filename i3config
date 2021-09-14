@@ -195,8 +195,10 @@ bindsym $mod+3 workspace $ws3; exec [ $(ps h -C terminator | grep ws3 | wc -l) =
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7; exec [ $(ps h -C terminator | grep ws7 | wc -l) = 0 ] && terminator -u --title ws7
-bindsym $mod+8 workspace $ws8; exec [ $(ps h -C terminator | grep ws8 | wc -l) = 0 ] && terminator -u --title ws8
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+#bindsym $mod+7 workspace $ws7; exec [ $(ps h -C terminator | grep ws7 | wc -l) = 0 ] && terminator -u --title ws7
+#bindsym $mod+8 workspace $ws8; exec [ $(ps h -C terminator | grep ws8 | wc -l) = 0 ] && terminator -u --title ws8
 bindsym $mod+9 workspace $ws9; exec [ $(ps h -C terminator | grep ws9 | wc -l) = 0 ] && terminator -u --title ws9
 bindsym $mod+0 workspace $ws10; exec [ $(ps -aux | grep firefox | grep -v grep | wc -l) = 0 ] && /usr/bin/firefox https://e.liebherr.com/owa/#path=/mail
 bindsym $mod+Control+1 workspace $ws11; exec [ $(ps h -C vpnui | wc -l) = 0 ] && /opt/cisco/anyconnect/bin/vpnui
@@ -220,6 +222,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move workspaces around
 mode "move workspace" {
@@ -305,7 +308,7 @@ bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 # add background
 #exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/6.jpg /home/flo/i3/wallpaper/1.jpg /home/flo/i3/wallpaper/2.jpg
 #exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/6.jpg /home/flo/i3/wallpaper/noel1.jpg /home/flo/i3/wallpaper/2.jpg
-exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/noel3.jpg /home/flo/i3/wallpaper/noel1.jpg /home/flo/i3/wallpaper/2.jpg
+exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/noel3.jpg /home/flo/i3/wallpaper/noel4.jpg /home/flo/i3/wallpaper/2.jpg
 
 #for_window [class=".*"] title_format "<b>%title</b> -c: %class -i: %instance"
 #for_window [class=".*"] title_format "<b>%title</b>"
