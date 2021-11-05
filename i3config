@@ -46,11 +46,10 @@ for_window [title="Remmina Remote Desktop Client"] move to workspace $ws12
 mode "system" {
         bindsym d exec --no-startup-id dmenuDisplay.sh, mode "default"
         bindsym h exec --no-startup-id dmenuPrompt.sh "Do you want to shutdown the system?" "shutdown -h now", mode "default"
-        bindsym a exec --no-startup-id dmenuFlo.sh, mode "default"
         bindsym k exec --no-startup-id dmenuK8sContexts.sh, mode "default"
         bindsym l exec --no-startup-id i3lock -f -i /home/flo/i3/wallpaper/1.png && sleep 1, mode "default"
         bindsym b exec --no-startup-id dmenuProjectsBusiness.sh, mode "default"
-        bindsym p exec --no-startup-id dmenuProjectsComponents.sh, mode "default"
+        bindsym p exec --no-startup-id dmenuProjectsCot.sh, mode "default"
         bindsym r exec --no-startup-id dmenuPrompt.sh "Do you want to restart the system?" "shutdown -r now", mode "default"
         bindsym s exec --no-startup-id rofi -modi ssh -show ssh, mode "default"
         bindsym v exec --no-startup-id dmenuVpn.sh, mode "default"
