@@ -61,7 +61,7 @@ function cot_projects_domain() {
 }
 
 function cot_projects_infrastructure() {
-    projects_infrastructure="frodeno\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nlimsg-importer\npanini"
+    projects_infrastructure="fredi\nfrodeno\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nlimsg-importer\npanini"
     project_infrastructure=$(echo -e "$projects_infrastructure" | dmenu -i -p "cot infrastructure projects:")
 
     if [[ -z "${project_infrastructure// }" ]]; then
@@ -69,11 +69,11 @@ function cot_projects_infrastructure() {
     fi
 
     case "$project_infrastructure" in
-        limsg-importer|panini)
-            open_project_in_goland $project_domain
+        fredi|limsg-importer|panini)
+            open_project_in_goland $project_infrastructure
             ;;
         frodeno|iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library)
-            open_project_in_idea $project_domain
+            open_project_in_idea $project_infrastructure
             ;;
     esac
 }
