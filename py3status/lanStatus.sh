@@ -2,10 +2,10 @@
 
 #cat /home/flo/.kube/config | grep "cluster: haubus" | awk '{print $2}' | sed 's/.\{3\}$//' | sed 's/^.\{6\}//' | awk '{printf $1}'
 
-ip addr show enx98e743e24afa | grep "state UP" > /dev/null
+ip addr show enp0s31f6 | grep "state UP" > /dev/null
 liebherr_lan_status=$(echo $?)
 if [ $liebherr_lan_status -eq 0 ]; then
-    liebherr_ip_address=$(ip addr show enx98e743e24afa | grep 'inet ' | awk '{print $2}' | cut -f1 -d"/")
+    liebherr_ip_address=$(ip addr show enp0s31f6 | grep 'inet ' | awk '{print $2}' | cut -f1 -d"/")
     printf " $liebherr_ip_address"
     exit 0
 fi
