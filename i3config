@@ -162,8 +162,8 @@ set $ws19 "19:&#xf5ab;"
 set $ws20 "20:&#xf09e;"
 
 set $LAPTOP_DISPLAY eDP-1
-set $FIRST_DISPLAY DP-1-2
-set $SECOND_DISPLAY DP-1-1
+set $FIRST_DISPLAY DP-2-2
+set $SECOND_DISPLAY DP-2-1
 
 # assign workspaces to monitors
 workspace 1 output $FIRST_DISPLAY
