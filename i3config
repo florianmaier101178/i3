@@ -27,11 +27,7 @@ hide_edge_borders both
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
-# zooming with terminator
-# zoom in -> Ctrl + +
-# zoom out -> Ctrl + -
-# normal size -> Ctrl + 0
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -61,23 +57,6 @@ mode "system" {
         bindsym $mod+x mode "default"
 }
 bindsym $mod+x mode "system"
-
-# system tools
-for_window [instance="terminator" title="^htop$"] fullscreen
-for_window [instance="terminator" title="^ranger$"] fullscreen
-for_window [instance="terminator" title="^top$"] fullscreen
-# assign [class="firefox"] 1:Web
-
-mode "tools" {
-        bindsym h exec --no-startup-id i3-msg 'exec terminator -e htop --title htop', mode "default"
-        bindsym r exec --no-startup-id i3-msg 'exec terminator -e ranger --title ranger', mode "default"
-        bindsym t exec --no-startup-id i3-msg 'exec terminator -e htop --title top', mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+t mode "default"
-}
-bindsym $mod+t mode "tools"
 
 # scratchpad
 # Make the currently focused window a scratchpad
@@ -188,17 +167,15 @@ workspace 19 output $LAPTOP_DISPLAY
 workspace 20 output $FIRST_DISPLAY
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1; exec [ $(ps h -C terminator | grep ws1 | wc -l) = 0 ] && terminator -u --title ws1
+bindsym $mod+1 workspace $ws1; exec [ $(ps h -C kitty | grep ws1 | wc -l) = 0 ] && kitty --title ws1
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C chrome | wc -l) = 0 ] && /usr/bin/google-chrome-stable -s
-bindsym $mod+3 workspace $ws3; exec [ $(ps h -C terminator | grep ws3 | wc -l) = 0 ] && terminator -u --title ws3
+bindsym $mod+3 workspace $ws3; exec [ $(ps h -C kitty | grep ws3 | wc -l) = 0 ] && kitty --title ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-#bindsym $mod+7 workspace $ws7; exec [ $(ps h -C terminator | grep ws7 | wc -l) = 0 ] && terminator -u --title ws7
-#bindsym $mod+8 workspace $ws8; exec [ $(ps h -C terminator | grep ws8 | wc -l) = 0 ] && terminator -u --title ws8
-bindsym $mod+9 workspace $ws9; exec [ $(ps h -C terminator | grep ws9 | wc -l) = 0 ] && terminator -u --title ws9
+bindsym $mod+9 workspace $ws9; exec [ $(ps h -C kitty | grep ws9 | wc -l) = 0 ] && kitty --title ws9
 bindsym $mod+0 workspace $ws10; exec [ $(ps -aux | grep firefox | grep -v grep | wc -l) = 0 ] && /usr/bin/firefox https://e.liebherr.com/owa/#path=/mail
 bindsym $mod+Control+1 workspace $ws11; exec [ $(ps h -C vpnui | wc -l) = 0 ] && /opt/cisco/anyconnect/bin/vpnui
 bindsym $mod+Control+2 workspace $ws12; exec /usr/bin/remmina
