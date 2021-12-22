@@ -40,7 +40,8 @@ for_window [title="Liebherr Intra"] move to workspace $ws13
 for_window [title="Remmina Remote Desktop Client"] move to workspace $ws12
 
 mode "system" {
-        bindsym b exec --no-startup-id dmenuProjectsBusiness.sh, mode "default"
+        #bindsym b exec --no-startup-id dmenuProjectsBusiness.sh, mode "default"
+        bindsym b exec --no-startup-id rofi -show filebrowser external/knowledge/books/, mode "default"
         bindsym d exec --no-startup-id dmenuDisplay.sh, mode "default"
         bindsym h exec --no-startup-id dmenuPrompt.sh "Do you want to shutdown the system?" "shutdown -h now", mode "default"
         bindsym k exec --no-startup-id dmenuK8sContexts.sh, mode "default"
