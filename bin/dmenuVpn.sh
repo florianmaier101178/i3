@@ -15,7 +15,7 @@ case "$vpn_command" in
         notify-send -t 3000 "$(lhvpns)"
         ;;
     intra)
-        remmina -c ~/.local/share/remmina/group_rdp_liebherr-intra_10-4-8-157.remmina
+        remmina -c ~/.local/share/remmina/group_rdp_liebherr-intra_10-4-8-165.remmina
         ;;
 esac
 
