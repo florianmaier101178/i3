@@ -72,16 +72,16 @@ function cot_projects_test() {
 
     case "$project_test" in
         itest|roger)
-            open_project_in_goland $project_domain
+            open_project_in_goland $project_test
             ;;
         itest-executor)
-            open_project_in_idea $project_domain
+            open_project_in_idea $project_test
             ;;
     esac
 }
 
 function cot_projects_infrastructure() {
-    projects_infrastructure="bianconeri\nfredi\nfrodeno\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
+    projects_infrastructure="bianconeri\nfredi\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
     project_infrastructure=$(echo -e "$projects_infrastructure" | dmenu -i -p "cot infrastructure projects:")
 
     if [[ -z "${project_infrastructure// }" ]]; then
@@ -92,7 +92,7 @@ function cot_projects_infrastructure() {
         fredi|limsg-importer|lionel|panini)
             open_project_in_goland $project_infrastructure
             ;;
-        bianconeri|frodeno|iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
+        bianconeri|iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
             open_project_in_idea $project_infrastructure
             ;;
     esac
