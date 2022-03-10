@@ -168,7 +168,7 @@ workspace 19 output $LAPTOP_DISPLAY
 workspace 20 output $FIRST_DISPLAY
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1; exec [ $(ps h -C kitty | grep ws1 | wc -l) = 0 ] && kitty --session ~/kitty/sessions/workspace1.conf --title ws1
+bindsym $mod+1 workspace $ws1; exec [ $(ps h -C kitty | grep ws1 | wc -l) = 0 ] && kitty --title ws1
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C chrome | wc -l) = 0 ] && /usr/bin/google-chrome-stable -s
 bindsym $mod+3 workspace $ws3; exec [ $(ps h -C kitty | grep ws3 | wc -l) = 0 ] && kitty --title ws3
 bindsym $mod+4 workspace $ws4

@@ -9,7 +9,7 @@ function abort_project_selection() {
 }
 
 function cot_project_type_selection() {
-    projects_type="domain\ninfrastructure\nother"
+    projects_type="domain\ntest\ninfrastructure\nother"
     project_type=$(echo -e "$projects_type" | dmenu -i -p "cot project type:")
 
     if [[ -z "${project_type// }" ]]; then
@@ -19,6 +19,9 @@ function cot_project_type_selection() {
     case "$project_type" in
         domain)
             cot_projects_domain
+            ;;
+        test)
+            cot_projects_test
             ;;
         infrastructure)
             cot_projects_infrastructure
@@ -42,26 +45,43 @@ function open_project_in_pycharm() {
 }
 
 function cot_projects_domain() {
-    projects_domain="itest\nmahomes\npirlo\nsebi\nshaq\nstamford\nzizou"
+    projects_domain="mahomes\npavel\npirlo\nsebi\nshaq\nstamford\nzizou"
     project_domain=$(echo -e "$projects_domain" | dmenu -i -p "cot domain projects:")
-
 
     if [[ -z "${project_domain// }" ]]; then
         abort_project_selection
     fi
 
     case "$project_domain" in
-        itest|sebi|shaq|stamford)
+        sebi|shaq|stamford)
             open_project_in_goland $project_domain
             ;;
-        mahomes|pirlo|zizou)
+        mahomes|pavel|pirlo|zizou)
+            open_project_in_idea $project_domain
+            ;;
+    esac
+}
+
+function cot_projects_test() {
+    projects_test="itest\nitest-executor\nroger"
+    project_test=$(echo -e "$projects_test" | dmenu -i -p "cot test projects:")
+
+    if [[ -z "${project_test// }" ]]; then
+        abort_project_selection
+    fi
+
+    case "$project_test" in
+        itest|roger)
+            open_project_in_goland $project_domain
+            ;;
+        itest-executor)
             open_project_in_idea $project_domain
             ;;
     esac
 }
 
 function cot_projects_infrastructure() {
-    projects_infrastructure="bianconeri\nfredi\nfrodeno\niaac\niaac-generic\niaac-initial\nitest-executor\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
+    projects_infrastructure="bianconeri\nfredi\nfrodeno\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
     project_infrastructure=$(echo -e "$projects_infrastructure" | dmenu -i -p "cot infrastructure projects:")
 
     if [[ -z "${project_infrastructure// }" ]]; then
@@ -72,7 +92,7 @@ function cot_projects_infrastructure() {
         fredi|limsg-importer|lionel|panini)
             open_project_in_goland $project_infrastructure
             ;;
-        bianconeri|frodeno|iaac|iaac-generic|iaac-initial|itest-executor|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
+        bianconeri|frodeno|iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
             open_project_in_idea $project_infrastructure
             ;;
     esac
