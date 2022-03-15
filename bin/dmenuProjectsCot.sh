@@ -9,7 +9,7 @@ function abort_project_selection() {
 }
 
 function cot_project_type_selection() {
-    projects_type="domain\ntest\ninfrastructure\nother"
+    projects_type="domain\ntest\ninfrastructure\nui\nother"
     project_type=$(echo -e "$projects_type" | dmenu -i -p "cot project type:")
 
     if [[ -z "${project_type// }" ]]; then
@@ -26,6 +26,9 @@ function cot_project_type_selection() {
         infrastructure)
             cot_projects_infrastructure
             ;;
+        ui)
+            cot_projects_ui
+            ;;
         other)
             cot_projects_other
             ;;
@@ -38,6 +41,10 @@ function open_project_in_goland() {
 
 function open_project_in_idea() {
     cd /home/flo/projects/cot/$1 && idea .
+}
+
+function open_project_in_webstorm() {
+    cd /home/flo/projects/cot/$1 && webstorm .
 }
 
 function open_project_in_pycharm() {
@@ -94,6 +101,21 @@ function cot_projects_infrastructure() {
             ;;
         bianconeri|iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
             open_project_in_idea $project_infrastructure
+            ;;
+    esac
+}
+
+function cot_projects_ui() {
+    projects_ui="eliud\nmarta"
+    project_ui=$(echo -e "$projects_ui" | dmenu -i -p "cot ui projects:")
+
+    if [[ -z "${project_ui// }" ]]; then
+        abort_project_selection
+    fi
+
+    case "$project_ui" in
+        eliud|marta)
+            open_project_in_webstorm $project_ui
             ;;
     esac
 }
