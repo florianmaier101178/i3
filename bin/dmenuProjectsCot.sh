@@ -9,7 +9,7 @@ function abort_project_selection() {
 }
 
 function cot_project_type_selection() {
-    projects_type="domain\ntest\ninfrastructure\nui\nother"
+    projects_type="domain\ntest\ninfrastructure\nrecycled\nui\nother"
     project_type=$(echo -e "$projects_type" | dmenu -i -p "cot project type:")
 
     if [[ -z "${project_type// }" ]]; then
@@ -26,6 +26,9 @@ function cot_project_type_selection() {
         infrastructure)
             cot_projects_infrastructure
             ;;
+        recycled)
+            cot_projects_recycled
+            ;;
         ui)
             cot_projects_ui
             ;;
@@ -39,8 +42,16 @@ function open_project_in_goland() {
     cd /home/flo/projects/cot/$1 && goland .
 }
 
+function open_recycled_project_in_goland() {
+    cd /home/flo/projects/cot/recycled/$1 && goland .
+}
+
 function open_project_in_idea() {
     cd /home/flo/projects/cot/$1 && idea .
+}
+
+function open_recycled_project_in_idea() {
+    cd /home/flo/projects/cot/recycled/$1 && idea .
 }
 
 function open_project_in_webstorm() {
@@ -52,7 +63,7 @@ function open_project_in_pycharm() {
 }
 
 function cot_projects_domain() {
-    projects_domain="mahomes\npavel\npirlo\nsebi\nshaq\nstamford\nzizou"
+    projects_domain="kobe\nmahomes\npavel\npirlo\nshaq\nzizou"
     project_domain=$(echo -e "$projects_domain" | dmenu -i -p "cot domain projects:")
 
     if [[ -z "${project_domain// }" ]]; then
@@ -60,10 +71,10 @@ function cot_projects_domain() {
     fi
 
     case "$project_domain" in
-        sebi|shaq|stamford)
+        shaq)
             open_project_in_goland $project_domain
             ;;
-        mahomes|pavel|pirlo|zizou)
+        kobe|mahomes|pavel|pirlo|zizou)
             open_project_in_idea $project_domain
             ;;
     esac
@@ -88,7 +99,7 @@ function cot_projects_test() {
 }
 
 function cot_projects_infrastructure() {
-    projects_infrastructure="bianconeri\nfredi\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
+    projects_infrastructure="fredi\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
     project_infrastructure=$(echo -e "$projects_infrastructure" | dmenu -i -p "cot infrastructure projects:")
 
     if [[ -z "${project_infrastructure// }" ]]; then
@@ -99,8 +110,27 @@ function cot_projects_infrastructure() {
         fredi|limsg-importer|lionel|panini)
             open_project_in_goland $project_infrastructure
             ;;
-        bianconeri|iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
+        iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
             open_project_in_idea $project_infrastructure
+            ;;
+    esac
+}
+
+function cot_projects_recycled() {
+    projects_recycled="bianconeri\nsebi\nstamford"
+    project_recycled=$(echo -e "$projects_recycled" | dmenu -i -p "cot recycled projects:")
+
+
+    if [[ -z "${project_recycled// }" ]]; then
+        abort_project_selection
+    fi
+
+    case "$project_recycled" in
+        sebi|stamford)
+            open_recycled_project_in_goland $project_recycled
+            ;;
+        bianconeri)
+            open_recycled_project_in_idea $project_recycled
             ;;
     esac
 }
