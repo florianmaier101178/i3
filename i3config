@@ -177,7 +177,8 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9; exec [ $(ps h -C kitty | grep ws9 | wc -l) = 0 ] && kitty --title ws9
-bindsym $mod+0 workspace $ws10; exec [ $(ps -aux | grep firefox | grep -v grep | wc -l) = 0 ] && /usr/bin/firefox https://e.liebherr.com/owa/#path=/mail
+#bindsym $mod+0 workspace $ws10; exec [ $(ps -aux | grep firefox | grep -v grep | wc -l) = 0 ] && /usr/bin/firefox https://e.liebherr.com/owa/#path=/mail
+bindsym $mod+0 workspace $ws0; exec [ $(ps h -C qutebrowser | wc -l) = 0 ] && /usr/bin/qutebrowser
 bindsym $mod+Control+1 workspace $ws11; exec [ $(ps h -C vpnui | wc -l) = 0 ] && /opt/cisco/anyconnect/bin/vpnui
 bindsym $mod+Control+2 workspace $ws12; exec /usr/bin/remmina
 bindsym $mod+Control+3 workspace $ws13
