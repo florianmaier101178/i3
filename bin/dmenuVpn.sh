@@ -1,10 +1,13 @@
 #!/bin/bash
 
-vpn_commands="connect\ndisconnect\nstatus\nintra"
+vpn_commands="ui\nconnect\ndisconnect\nstatus\nintra"
 
 vpn_command=$(echo -e "$vpn_commands" | dmenu -i -p "VPN:")
 
 case "$vpn_command" in
+    ui)
+        /usr/bin/globalprotect launch-ui
+        ;;
     connect) 
         lhvpnc
         ;;

@@ -129,7 +129,8 @@ set $ws6 "6:&#xf044;"
 set $ws7 "7:&#xf4ad;"
 set $ws8 "8:&#xf120;"
 set $ws9 "9:&#xf120;"
-set $ws10 "10:&#xf0e0;"
+#set $ws10 "10:&#xf0e0;"
+set $ws10 "10:&#xf268;"
 set $ws11 "11:&#xf084;"
 set $ws12 "12:&#xf017;"
 set $ws13 "13:&#xf017;"
@@ -178,7 +179,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9; exec [ $(ps h -C kitty | grep ws9 | wc -l) = 0 ] && kitty --title ws9
 #bindsym $mod+0 workspace $ws10; exec [ $(ps -aux | grep firefox | grep -v grep | wc -l) = 0 ] && /usr/bin/firefox https://e.liebherr.com/owa/#path=/mail
-bindsym $mod+0 workspace $ws0; exec [ $(ps h -C qutebrowser | wc -l) = 0 ] && /usr/bin/qutebrowser
+bindsym $mod+0 workspace $ws10; exec [ $(ps h -C qutebrowser | wc -l) = 0 ] && /usr/bin/qutebrowser
 bindsym $mod+Control+1 workspace $ws11; exec [ $(ps h -C vpnui | wc -l) = 0 ] && /opt/cisco/anyconnect/bin/vpnui
 bindsym $mod+Control+2 workspace $ws12; exec /usr/bin/remmina
 bindsym $mod+Control+3 workspace $ws13
@@ -285,7 +286,8 @@ bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
 # add background
 #exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/noel3.jpg /home/flo/i3/wallpaper/noel4.jpg /home/flo/i3/wallpaper/2.jpg
-exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/noel3.jpg /home/flo/i3/wallpaper/noel4.jpg /home/flo/i3/wallpaper/NoelElefant.jpg
+#exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/noel3.jpg /home/flo/i3/wallpaper/noel4.jpg /home/flo/i3/wallpaper/NoelElefant.jpg
+exec --no-startup-id feh --bg-fill /home/flo/i3/wallpaper/noel3.jpg /home/flo/i3/wallpaper/noel_ostern.jpg /home/flo/i3/wallpaper/NoelElefant.jpg
 
 #for_window [class=".*"] title_format "<b>%title</b> -c: %class -i: %instance"
 #for_window [class=".*"] title_format "<b>%title</b>"

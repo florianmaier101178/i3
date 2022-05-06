@@ -63,7 +63,7 @@ function open_project_in_pycharm() {
 }
 
 function cot_projects_domain() {
-    projects_domain="kobe\nmahomes\npavel\npirlo\nshaq\nzizou"
+    projects_domain="diego\nkobe\nmahomes\npavel\npirlo\nshaq\nzizou"
     project_domain=$(echo -e "$projects_domain" | dmenu -i -p "cot domain projects:")
 
     if [[ -z "${project_domain// }" ]]; then
@@ -74,7 +74,7 @@ function cot_projects_domain() {
         shaq)
             open_project_in_goland $project_domain
             ;;
-        kobe|mahomes|pavel|pirlo|zizou)
+        diego|kobe|mahomes|pavel|pirlo|zizou)
             open_project_in_idea $project_domain
             ;;
     esac
