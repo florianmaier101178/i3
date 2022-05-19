@@ -99,7 +99,7 @@ function cot_projects_test() {
 }
 
 function cot_projects_infrastructure() {
-    projects_infrastructure="fredi\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\nlimsg-importer\nlionel\npanini"
+    projects_infrastructure="fredi\niaac\niaac-generic\niaac-initial\njenkins-agent-containers\njenkins-shared-library\nkafka-topics\ntimescale-setup\nlimsg-importer\nlionel\npanini"
     project_infrastructure=$(echo -e "$projects_infrastructure" | dmenu -i -p "cot infrastructure projects:")
 
     if [[ -z "${project_infrastructure// }" ]]; then
@@ -110,7 +110,7 @@ function cot_projects_infrastructure() {
         fredi|limsg-importer|lionel|panini)
             open_project_in_goland $project_infrastructure
             ;;
-        iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics)
+        iaac|iaac-generic|iaac-initial|jenkins-agent-containers|jenkins-shared-library|kafka-topics|timescale-setup)
             open_project_in_idea $project_infrastructure
             ;;
     esac
@@ -136,7 +136,7 @@ function cot_projects_recycled() {
 }
 
 function cot_projects_ui() {
-    projects_ui="eliud\nmarta"
+    projects_ui="eliud\njorge\nmarta"
     project_ui=$(echo -e "$projects_ui" | dmenu -i -p "cot ui projects:")
 
     if [[ -z "${project_ui// }" ]]; then
@@ -144,14 +144,14 @@ function cot_projects_ui() {
     fi
 
     case "$project_ui" in
-        eliud|marta)
+        eliud|jorge|marta)
             open_project_in_webstorm $project_ui
             ;;
     esac
 }
 
 function cot_projects_other()  {
-    projects_other="logger"
+    projects_other="telematicunit-sim\nlogger"
     project_other=$(echo -e "$projects_other" | dmenu -i -p "cot other projects:")
 
     if [[ -z "${project_other// }" ]]; then
@@ -159,6 +159,9 @@ function cot_projects_other()  {
     fi
 
     case "$project_other" in
+        telematicunit-sim)
+            open_project_in_pycharm "tools-telematicunitsim"
+            ;;
         logger)
             open_project_in_pycharm "/lmb/udsconverteddataretriever"
             ;;
